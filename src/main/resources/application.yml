@@ -1,0 +1,35 @@
+server:
+  port: 80
+
+logging:
+  level:
+    org.springframework: DEBUG
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+    username:
+    password:
+  jpa:
+    defer-datasource-initialization: true
+    show-sql: true
+    generate-ddl: true
+    database: mysql
+    hibernate:
+      ddl-auto: none
+  messages:
+    basename: messages
+#  security:
+#    user:
+#      name: username
+#      password: passw0rd
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
